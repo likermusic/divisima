@@ -1,17 +1,13 @@
 <?php 
 namespace app\controllers;
+use app\core\Controller;
 
-class MainController {
-    public function __construct() {
-        echo 'mainC';
-    }
-
+class MainController extends Controller {
+ 
     public function indexAction()
     {
-        echo 'indexAction';
-
+                // echo 'indexAction';
     }
-
 
     public function del(Type $var = null)
     {

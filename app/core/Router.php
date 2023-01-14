@@ -41,11 +41,13 @@ class Router {
     public function run()
     {
        if ($this->match()) {
+
+
         $controller_name = "\app\controllers\\" . ucfirst($this->params['controller'] . 'Controller');
         // echo $controller_name;
         if (class_exists($controller_name)) {
             // echo 'Yes';
-            $controller = new $controller_name();
+            $controller = new $controller_name($this->params);
             $action_name = $this->params['action'] . 'Action';
             if (method_exists($controller,$action_name)) {
                 $controller->$action_name();
