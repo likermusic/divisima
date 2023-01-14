@@ -1,5 +1,7 @@
 <?php
     include "app/lib/debug.php";
+    include "app/config/pathes.php";
+    
     use app\core\Router; 
 
     spl_autoload_register(function($class) {
@@ -7,7 +9,7 @@
         require_once "{$class}.php";
     });
 
-    $router = new Router('HELLO');
+    $router = new Router();
     $router->run();
 
 
