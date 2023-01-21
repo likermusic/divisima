@@ -12,9 +12,10 @@
             echo 'CONTROLLER';
             $this->route = $route;
             $this->view = new View($route);
-
-            // $this->model = 
-            
+            $model_name = '\app\models\\' . ucfirst($route['controller']);
+            if (class_exists($model_name)) {
+                $this->model = new $model_name;
+            }            
             // echo $this->a;
         }
 

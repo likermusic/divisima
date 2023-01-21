@@ -9,6 +9,7 @@
         require_once "{$class}.php";
     });
 
+
     $router = new Router();
     $router->run();
 
