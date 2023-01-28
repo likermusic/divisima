@@ -9,7 +9,7 @@
 
         public function __construct($route) {
             // echo $route;
-            echo 'CONTROLLER';
+            // echo 'CONTROLLER';
             $this->route = $route;
             $this->view = new View($route);
             $model_name = '\app\models\\' . ucfirst($route['controller']);

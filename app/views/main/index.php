@@ -1,7 +1,7 @@
 	<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg" data-setbg="img/bg.jpg">
+			<div class="hs-item set-bg" data-setbg="<?=WWW?>/img/bg.jpg">
 				<div class="container">
 					<div class="row">
 						<div class="col-xl-6 col-lg-7 text-white">
@@ -19,7 +19,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="hs-item set-bg" data-setbg="img/bg-2.jpg">
+			<div class="hs-item set-bg" data-setbg="<?=WWW?>/img/bg-2.jpg">
 				<div class="container">
 					<div class="row">
 						<div class="col-xl-6 col-lg-7 text-white">

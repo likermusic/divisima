@@ -102,6 +102,10 @@
 
 
 	<!--====== Javascripts & Jquery ======-->
+	<script>
+		const WWW = "<?=WWW?>";
+	</script>
+	</script>
 	<script src="<?=WWW?>/js/jquery-3.2.1.min.js"></script>
 	<script src="<?=WWW?>/js/bootstrap.min.js"></script>
 	<script src="<?=WWW?>/js/jquery.slicknav.min.js"></script>
