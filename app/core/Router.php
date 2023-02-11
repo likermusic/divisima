@@ -51,6 +51,7 @@ class Router {
             $action_name = $this->params['action'] . 'Action';
             if (method_exists($controller,$action_name)) {
                 $controller->$action_name();
+
             } else {
                 if (!PROD) {
                     echo "Экшен {$action_name} не найден";

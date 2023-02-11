@@ -11,14 +11,16 @@
             // echo $route;
             // echo 'CONTROLLER';
             $this->route = $route;
-            $this->view = new View($route);
             $model_name = '\app\models\\' . ucfirst($route['controller']);
             if (class_exists($model_name)) {
                 $this->model = new $model_name;
+                // $this->model->getProducts();
             }            
+            $this->view = new View($route);
             // echo $this->a;
         }
 
      
     }
 ?>
+

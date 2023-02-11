@@ -6,10 +6,13 @@ class MainController extends Controller {
  
     public function indexAction()
     {
+        $this->model->getProducts();
+        view($data)
                 // echo 'indexAction';
+                // debug($this->route);
     }
 
-    public function del(Type $var = null)
+    public function del()
     {
         # code...
     }
