@@ -4,11 +4,12 @@
 
     abstract class Model {
         public $db;
-
+        public $test;
 
         public function __construct() {
            $db_class = new DB();
            $this->db = $db_class->db;
+           $this->test = $db_class->test;
         //    $stmt = "SELECT * FROM products";
         //    $query = $this->db->query($stmt,\PDO::FETCH_ASSOC);
         //    $data = $query->fetchAll();

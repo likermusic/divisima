@@ -3,7 +3,6 @@
     include "app/config/pathes.php";
     // require_once __DIR__ .'/vendor/autoload.php';
     use app\core\Router;
-
     spl_autoload_register(function($class) {
         $class = str_replace('\\','/',$class);
         require_once "{$class}.php";

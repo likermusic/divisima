@@ -3,13 +3,13 @@ namespace app\controllers;
 use app\core\Controller;
 
 class MainController extends Controller {
- 
+     // public $t = 'TEXTY';
     public function indexAction()
     {
-        $this->model->getProducts();
-        view($data)
-                // echo 'indexAction';
-                // debug($this->route);
+        $products = $this->model->getProducts();
+        // echo $this->test;
+        // debug($products);
+
     }
 
     public function del()

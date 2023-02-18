@@ -14,13 +14,14 @@ class Router {
 
     public function add($route,$params)
     {
-        $route = '#^' . $route . '$#';
+        $route = '#^' . trim($route,'/') . '$#';
         $this->routes[$route] = $params;
     }
 
     public function match()
     {
         $url = trim($_SERVER['REQUEST_URI'],'/');
+        
         $url = $this->removeQueryString($url);
         foreach ($this->routes as $route => $params) {
             if (preg_match($route,$url,$matches)) {
@@ -63,7 +64,7 @@ class Router {
             if (!PROD) {
              echo "Контроллер {$controller_name} не найден";
             } else {
-            echo '404';
+                include 'app/views/404/index.php';
             }    
         }
 
@@ -71,7 +72,7 @@ class Router {
         if (!PROD) {
             echo 'Страница не найдена (404)';
         } else {
-            echo '404';
+            include 'app/views/404/index.php';
         }
        }
     }

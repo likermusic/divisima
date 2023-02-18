@@ -2,6 +2,8 @@
     namespace app\core;
 
     class DB {
+        public $test = 'TEST';
+
         public $db;
 
       public function __construct() {

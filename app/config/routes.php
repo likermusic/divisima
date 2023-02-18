@@ -1,12 +1,11 @@
 <?php 
 return [
-
-    '' => [
+    PATH . '/' => [
         'controller' => 'main',
         'action' => 'index'
     ],
 
-    // 'posts' => [
+    // '/posts' => [
     //     'controller' => 'posts',
     //     'action' => 'index'
     // ]
@@ -21,5 +20,7 @@ return [
 ];
 ?>
 
+<!-- http://divisima/posts/show -->
 
-http://divisima/posts/show
+
+http://divisima/dasdasd
