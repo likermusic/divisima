@@ -3,13 +3,13 @@
     // use app\core\DB;
 
     abstract class Model {
-        public $db;
-        public $test;
+        protected $db;
+        // public $test;
 
         public function __construct() {
            $db_class = new DB();
            $this->db = $db_class->db;
-           $this->test = $db_class->test;
+        //    $this->test = $db_class->test;
         //    $stmt = "SELECT * FROM products";
         //    $query = $this->db->query($stmt,\PDO::FETCH_ASSOC);
         //    $data = $query->fetchAll();
@@ -22,7 +22,14 @@
         //    debug($data);
         }
 
+        public function fetchAll($table)
+        {
+            $stmt = $this->db->prepare("SELECT * FROM $table");
+            $stmt->execute();
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+
 
     }
 ?>
-

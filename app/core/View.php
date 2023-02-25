@@ -2,16 +2,16 @@
     namespace app\core;
 
     class View  {
-        public $route;
-        public $view;
-        public $layout = 'default';
+        private $route;
+        private $view;
+        private $layout = 'default';
         public function __construct($route) {
             $this->route = $route;
             $this->view = 'app/views/' . $route['controller'] . '/index.php';
-            $this->render();
+            // $this->render([4,2,54,7]);
         }
         
-        public function render()
+        public function render($data)
         {
             $layout = 'app/views/layouts/' . $this->layout . '.php';
             if (file_exists($this->view)) {
@@ -23,9 +23,9 @@
             if (file_exists($layout)) {
                 require_once $layout;
             }
+
         }
 
 
     }
 ?>
-

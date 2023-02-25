@@ -1,5 +1,5 @@
 <?php 
-    define('PROD',false);
+    define('PROD',true);
     define('WWW', "public");
     define('PATH','');
 ?>

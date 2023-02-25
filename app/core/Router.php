@@ -2,8 +2,8 @@
 namespace app\core;
 
 class Router {
-    public $routes = [];
-    public $params = [];
+    private $routes = [];
+    private $params = [];
 
     public function __construct() {
         $routes_arr = require_once "app/config/routes.php";
@@ -12,13 +12,13 @@ class Router {
         }
     }
 
-    public function add($route,$params)
+    private function add($route,$params)
     {
         $route = '#^' . trim($route,'/') . '$#';
         $this->routes[$route] = $params;
     }
 
-    public function match()
+    private function match()
     {
         $url = trim($_SERVER['REQUEST_URI'],'/');
         
@@ -32,7 +32,7 @@ class Router {
         return false;
     }
 
-    public function removeQueryString($url)
+    private function removeQueryString($url)
     {
         // 'catalogue?page=2'
         $params = explode('?',$url);

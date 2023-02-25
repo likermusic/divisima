@@ -166,35 +166,35 @@
 			<div class="section-title">
 				<h2>BROWSE TOP SELLING PRODUCTS</h2>
 			</div>
-			<ul class="product-filter-menu">
-				<li><a href="#">TOPS</a></li>
-				<li><a href="#">JUMPSUITS</a></li>
-				<li><a href="#">LINGERIE</a></li>
-				<li><a href="#">JEANS</a></li>
-				<li><a href="#">DRESSES</a></li>
-				<li><a href="#">COATS</a></li>
-				<li><a href="#">JUMPERS</a></li>
-				<li><a href="#">LEGGINGS</a></li>
+
+			<ul class="d-flex row justify-content-center product-filter-menu">
+				<?php foreach ($data['categories'] as $category) :?>
+					<li><a href="#"><?=$category->name?></a></li>
+				<?php endforeach;?>
 			</ul>
 
-			<?php var_dump($this->products)?>
+			<?php //debug($data)?>
 
 			<div class="row">
-				<div class="col-lg-3 col-sm-6">
-					<div class="product-item">
-						<div class="pi-pic">
-							<img src="./img/product/5.jpg" alt="">
-							<div class="pi-links">
-								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+				<?php foreach ($data['products'] as $product) :?>
+					<div class="col-lg-3 col-sm-6">
+						<div class="product-item">
+							<div class="pi-pic">
+								<img src="<?=WWW?>/img/product/<?=$product->img?>" alt="">
+								<div class="pi-links">
+									<a href="?id=<?=$product->id?>" data-id="<?=$product->id?>" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+									<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+								</div>
+							</div>
+							<div class="pi-text">
+								<h6><span>$</span><?=$product->price?></h6>
+								<p><?=ucfirst($product->name)?></p>
 							</div>
 						</div>
-						<div class="pi-text">
-							<h6>$35,00</h6>
-							<p>Flamboyant Pink Top </p>
-						</div>
 					</div>
-				</div>
+				<?php endforeach;?>
+
+
 			</div>
 			<div class="text-center pt-5">
 				<button class="site-btn sb-line sb-dark">LOAD MORE</button>
@@ -216,3 +216,5 @@
 		</div>
 	</section>
 	<!-- Banner section end  -->
+
+

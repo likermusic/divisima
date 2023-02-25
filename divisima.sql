@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 11 2023 г., 19:08
+-- Время создания: Фев 25 2023 г., 22:22
 -- Версия сервера: 5.6.47
 -- Версия PHP: 7.4.14
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- База данных: `divisima`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `carts`
+--
+
+CREATE TABLE `carts` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `carts`
+--
+
+INSERT INTO `carts` (`id`, `user_id`, `product_id`) VALUES
+(1, 1, 2),
+(2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -84,9 +104,37 @@ INSERT INTO `products` (`id`, `name`, `category_id`, `price`, `img`, `discount`,
 (17, 'pharetra nibh. Aliquam ornare,', 3, '17.42', '17.jpg', 12, 14, 1),
 (18, 'id, libero. Donec consectetuer mauris', 3, '59.17', '18.jpg', 50, 23, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `login` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `login`, `password`, `role`) VALUES
+(1, 'u1', '123', 'user'),
+(2, 'u2', '123', 'user');
+
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `carts`
+--
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Индексы таблицы `categories`
@@ -101,8 +149,20 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
+
+--
+-- AUTO_INCREMENT для таблицы `carts`
+--
+ALTER TABLE `carts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `categories`
@@ -115,6 +175,22 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `carts`
+--
+ALTER TABLE `carts`
+  ADD CONSTRAINT `carts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

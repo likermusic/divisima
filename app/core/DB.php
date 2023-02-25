@@ -2,11 +2,11 @@
     namespace app\core;
 
     class DB {
-        public $test = 'TEST';
+        // public $test = 'TEST';
 
         public $db;
-
       public function __construct() {
+
         $db_config_file = 'app/config/db_config.php';
         if (file_exists($db_config_file)) {
             $db_config = require $db_config_file;

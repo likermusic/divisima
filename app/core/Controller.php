@@ -3,12 +3,12 @@
     // use app\core\View;
 
     abstract class Controller {
-        public $route;
-        public $view;
-        public $model;
+        protected $route;
+        protected $view;
+        protected $model;
 
         public function __construct($route) {
-            debug($this->products);
+            // debug($this->products);
             // echo $this->t;
             // echo $route;
             // echo 'CONTROLLER';
@@ -27,4 +27,3 @@
      
     }
 ?>
-

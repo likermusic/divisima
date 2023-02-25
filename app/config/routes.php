@@ -4,11 +4,10 @@ return [
         'controller' => 'main',
         'action' => 'index'
     ],
-
-    // '/posts' => [
-    //     'controller' => 'posts',
-    //     'action' => 'index'
-    // ]
+    PATH . '/cart' => [
+        'controller' => 'cart',
+        'action' => 'index'
+    ]
     // 'posts/edit' => [
     //     'controller' => 'posts',
     //     'action' => 'edit'
@@ -23,4 +22,5 @@ return [
 <!-- http://divisima/posts/show -->
 
 
-http://divisima/dasdasd
+<!-- http://divisima/dasdasd -->
+
