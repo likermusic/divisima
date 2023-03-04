@@ -7,6 +7,10 @@ return [
     PATH . '/cart' => [
         'controller' => 'cart',
         'action' => 'index'
+    ],
+    PATH . 'mainHandler' => [
+        'controller' => 'main',
+        'action' => 'requestHandler'
     ]
     // 'posts/edit' => [
     //     'controller' => 'posts',

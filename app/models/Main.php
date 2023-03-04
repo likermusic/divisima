@@ -30,12 +30,13 @@
         // }
 
         public function addProductIntoCart($id) {  
-            $stmt = $this->db->prepare("INSERT INTO carts SET id = ?");
+            // $stmt = $this->db->prepare("INSERT INTO carts SET id = ?");
+            $stmt = $this->db->prepare("INSERT INTO carts SET user_id = 2, product_id=1");
+
             $stmt->execute([$id]);
 
             // debug($_SERVER['HTTP_REFERER']);
             // echo '12345';
-            header('Location:' . $_SERVER['HTTP_REFERER']);
             // Проверять true/false запроса 
             //редирект
 

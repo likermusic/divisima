@@ -14,6 +14,7 @@ class MainController extends Controller {
         $categories = $this->model->fetchAll('categories');
         if ($_GET['id']) {
             $this->model->addProductIntoCart($_GET['id']);
+            header('Location:' . $_SERVER['HTTP_REFERER']);
         }
 
         
@@ -22,15 +23,24 @@ class MainController extends Controller {
         // echo $this->test;
         // debug($products);
         
-        $data = ['products'=> $products, 'categories'=>$categories];
+        // $data = ['products'=> $products, 'categories'=>$categories];
+        $data = compact('products','categories');
         $this->view->render($data);
         // debug($this->route);
 
     }
 
-    protected function del()
+    public function requestHandlerAction()
     {
         // echo 'DELETE';
+        // $data = $_POST['id'];
+        // $id = file_get_contents("php://input");
+        $id = $_POST['id'];
+        $this->model->addProductIntoCart($id);
+        // $data = json_decode($data,1);
+        // echo 'requestHandlerAction';
+
+
     }
 }
 
