@@ -29,11 +29,16 @@
         //     return $stmt->fetchAll(\PDO::FETCH_OBJ);
         // }
 
-        public function addProductIntoCart($id) {  
-            // $stmt = $this->db->prepare("INSERT INTO carts SET id = ?");
-            $stmt = $this->db->prepare("INSERT INTO carts SET user_id = 2, product_id=1");
 
-            $stmt->execute([$id]);
+        public function addProductIntoCart($user_id,$product_id) {  
+            // $stmt = $this->db->prepare("INSERT INTO carts SET id = ?");
+            
+            $stmt = $this->db->prepare("INSERT INTO carts SET user_id = :user_id, product_id= :product_id");
+
+            $stmt->execute([
+                'user_id' => $user_id,
+                'product_id'=> $product_id
+            ]);
 
             // debug($_SERVER['HTTP_REFERER']);
             // echo '12345';

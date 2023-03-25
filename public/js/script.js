@@ -9,12 +9,15 @@
 
 document.querySelector('.product-filter-section').addEventListener('click', function(e) {
     e.preventDefault();
-    if (e.target.matches('.add-card, .add-card *')) {
+    if (e.target.matches('.add-card, .add-card i, .add-card span')) {
         const id = e.target.dataset.id;
+        console.log(id);
         fetch('mainHandler', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'credentials': 'same-origin',
+                'X-Requested-With': 'XMLHttpRequest'
             },
             // body: obj
             body:`id=${id}`
@@ -28,6 +31,11 @@ document.querySelector('.product-filter-section').addEventListener('click', func
 
     }
 })
+
+
+function sum() {
+    
+}
 
 
 

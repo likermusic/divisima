@@ -869,15 +869,20 @@ ol {
 	-o-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 	text-align: center;
+	z-index: 1;
 }
 
 .product-item .pi-links a i {
 	display: inline-block;
 	color: #000;
+	z-index: -1;
+	position: relative;
 }
 
 .product-item .pi-links a.add-card {
 	padding-top: 8px;
+	position: relative;
+	z-index: 1;
 }
 
 .product-item .pi-links a.add-card span {
@@ -888,6 +893,7 @@ ol {
 	right: 19px;
 	top: 20px;
 	opacity: 0;
+	z-index: -1;
 }
 
 .product-item .pi-links a.add-card:hover {

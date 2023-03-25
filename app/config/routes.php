@@ -11,7 +11,7 @@ return [
     PATH . 'mainHandler' => [
         'controller' => 'main',
         'action' => 'requestHandler'
-    ]
+    ],
     // 'posts/edit' => [
     //     'controller' => 'posts',
     //     'action' => 'edit'
