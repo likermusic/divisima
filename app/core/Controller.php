@@ -14,6 +14,7 @@
             // echo $route;
             // echo 'CONTROLLER';
             $this->route = $route;
+            // debug($route);
             $model_name = '\app\models\\' . ucfirst($route['controller']);
             if (class_exists($model_name)) {
                 $this->model = new $model_name;

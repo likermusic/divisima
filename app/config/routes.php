@@ -12,6 +12,10 @@ return [
         'controller' => 'main',
         'action' => 'requestHandler'
     ],
+    PATH . 'cartHandler' => [
+        'controller' => 'cart',
+        'action' => 'requestHandler'
+    ],
     // 'posts/edit' => [
     //     'controller' => 'posts',
     //     'action' => 'edit'

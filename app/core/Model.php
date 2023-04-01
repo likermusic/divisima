@@ -24,9 +24,16 @@
 
         public function fetchAll($table)
         {
-            $stmt = $this->db->prepare("SELECT * FROM $table");
+            $stmt = $this->db->prepare("SELECT * FROM {$table}");
             $stmt->execute();
             return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+        public function fetchOne($id, $table)
+        {
+            $stmt = $this->db->prepare("SELECT * FROM {$table} WHERE id = {$id}");
+            $stmt->execute();
+            return $stmt->fetch(\PDO::FETCH_OBJ);
         }
 
 

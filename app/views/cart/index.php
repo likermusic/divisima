@@ -41,10 +41,12 @@
 		//var_dump(array_search(20, array_column($data['res']['products'],'product_id')));
 	?>
 <!-- Выводит не все товары - на 1 меньше чем есть -->
-		<?php foreach ($data['res']['qtys'] as $ind => $item) : ?>
-			<?php if ($ind_product = array_search($item->product_id, array_column($data['res']['products'],'product_id'))) :?>
+<?php foreach ($data['res']['qtys'] as $ind => $item) : ?>
+	<?php if (  array_search($item->product_id, array_column($data['res']['products'],'product_id')) !== false ) :?>
+		<?php $ind_product = array_search($item->product_id, array_column($data['res']['products'],'product_id'))?>
+
 				<?php $total += $item->qty * $data['res']['products'][$ind_product]->price?>
-				<tr>
+				<tr data-id="<?=$item->product_id?>">
 					<td class="product-col">
 						<img src="<?=WWW?>/img/product/<?=$data['res']['products'][$ind_product]->img?>" alt="">
 						<div class="pc-title">

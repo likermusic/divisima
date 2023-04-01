@@ -22,6 +22,11 @@
             $arr['qtys'] = $stmt->fetchAll(\PDO::FETCH_OBJ);
             return $arr;
         }
+
+        public function changeProductCount($product_id)
+        {
+            return $this->fetchOne($product_id, 'products');
+        }
     }
 
 ?>
