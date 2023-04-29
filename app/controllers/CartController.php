@@ -7,10 +7,16 @@ class CartController extends Controller {
     {
         $res = $this->model->getProducts($this->user_id);
 
+        if ($_GET['action'] and $_GET['action'] == "clear_cart") {
+            $this->model->clearCart($this->user_id);
+            header('location: /cart');
+            die;
+        }
         // debug($products);
         // $products = $this->model->getProducts('select');
         // var_dump($this->model);
         $data = compact('res');
+        //debug($data);
         $this->view->render($data);
     }
 
@@ -18,8 +24,10 @@ class CartController extends Controller {
     {
         if ($this->isFetch()) {
             $product_id = $_POST['id'];
-            $d = $this->model->changeProductCount($product_id);
-            echo json_encode($d);
+            $action = $_POST['action'];
+            $data = $this->model->changeProductCount($product_id,$action,$this->user_id);
+            echo json_encode($data);
+            // echo $data;  
         } else {
             if (!PROD) {
                 echo 'Страница не найдена (404)';

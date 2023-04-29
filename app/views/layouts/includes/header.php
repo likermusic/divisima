@@ -64,7 +64,7 @@
 									<i class="flaticon-bag"></i>
 									<span>0</span>
 								</div>
-								<a href="#">Shopping Cart</a>
+								<a href="/cart">Shopping Cart</a>
 							</div>
 						</div>
 					</div>
@@ -75,7 +75,7 @@
 			<div class="container">
 				<!-- menu -->
 				<ul class="main-menu">
-					<li><a href="#">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li><a href="#">Women</a></li>
 					<li><a href="#">Men</a></li>
 					<li><a href="#">Jewelry
@@ -104,5 +104,5 @@
 			</div>
 		</nav>
 	</header>
-	<!-- Header section end -->
+
 
