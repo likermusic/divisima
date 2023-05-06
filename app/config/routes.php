@@ -8,6 +8,12 @@ return [
         'controller' => 'cart',
         'action' => 'index'
     ],
+    PATH . '/signin' => [
+        'controller' => 'login',
+        'action' => 'index'
+    ],
+
+    // Fetch routes
     PATH . 'mainHandler' => [
         'controller' => 'main',
         'action' => 'requestHandler'

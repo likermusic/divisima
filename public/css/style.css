@@ -2184,24 +2184,7 @@ ol {
 	height: 100%;
 }
 
-.add-card {
-	position: relative;
-}
-.add-card .flaticon-bag::after {
-	content: '+1';
-	position: absolute;
-	top: 0px;
-	left:0;
-	width: 15px;
-	height: 15px;
-	border-radius: 50%;
-	z-index: 100 !important;
-	/* 
-	display: flex;
-	justify-content: center;
-	align-items: center; */
-	background-color: #50e550;
-}
+
 /* ----------------
   Responsive
 ---------------------*/

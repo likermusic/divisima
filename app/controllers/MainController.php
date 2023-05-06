@@ -17,18 +17,16 @@ class MainController extends Controller {
         //     header('Location:' . $_SERVER['HTTP_REFERER']);
         // }
 
-        
-
-        // $users= [1,2,3];
-        // echo $this->test;
-        // debug($products);
-        
+        $count = $this->count;
         // $data = ['products'=> $products, 'categories'=>$categories];
-        $data = compact('products','categories');
+        $data = compact('products','categories','count');
         $this->view->render($data);
         // debug($this->route);
-
     }
+
+ 
+
+
 
     public function requestHandlerAction()
     {
@@ -46,7 +44,8 @@ class MainController extends Controller {
         if ($this->isFetch()) {
             $product_id = $_POST['id'];
             $this->model->addProductIntoCart($this->user_id, $product_id);
-            echo $this->user_id . '   ' .$product_id;
+            $this->count += 1;
+            echo $this->count;
         } else {
             if (!PROD) {
                 echo 'Страница не найдена (404)';

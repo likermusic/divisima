@@ -79,7 +79,10 @@
 	</section>
 	<!-- Features section end -->
 
+	
 
+
+	</script>
 	<!-- letest product section -->
 	<section class="top-letest-product-section">
 		<div class="container">
@@ -182,7 +185,8 @@
 							<div class="pi-pic">
 								<img src="<?=WWW?>/img/product/<?=$product->img?>" alt="">
 								<div class="pi-links">
-									<a href="?id=<?=$product->id?>" data-id="<?=$product->id?>" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+									<a data-placement="top" tabindex="0" href="?id=<?=$product->id?>" data-id="<?=$product->id?>" class="add-card" data-toggle="popover" data-trigger="focus" data-content="Product in cart!"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+
 									<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
 								</div>
 							</div>

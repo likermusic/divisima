@@ -55,17 +55,22 @@
 					</div>
 					<div class="col-xl-4 col-lg-5">
 						<div class="user-panel">
+							<?php if (!$_SESSION['auth_user']) : ?>
 							<div class="up-item">
 								<i class="flaticon-profile"></i>
-								<a href="#">Sign</a> In or <a href="#">Create Account</a>
+								<a href="/signin">Sign</a> In or <a href="/signup">Create Account</a>
 							</div>
+							<?php else : ?>
 							<div class="up-item">
 								<div class="shopping-card">
 									<i class="flaticon-bag"></i>
-									<span>0</span>
+									<span id="cart-count"><?=$data['count']?></span>
 								</div>
 								<a href="/cart">Shopping Cart</a>
+								&emsp;
+								<a href="?action=logout">Logout</a>
 							</div>
+							<?php endif;?>
 						</div>
 					</div>
 				</div>

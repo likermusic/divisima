@@ -45,7 +45,6 @@
             // Проверять true/false запроса 
             //редирект
 
-
             // $stmt = $this->db->prepare("INSERT INTO carts SET id = ?, name=?");
             // $sth->execute(array('parent' => 1, 'name' => 'Виноград'));
 

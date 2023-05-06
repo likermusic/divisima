@@ -4,13 +4,13 @@
 		<div class="container">
 			<h4>Your cart</h4>
 			<div class="site-pagination">
-				<a href="">Home</a> /
-				<a href="">Your cart</a>
+				<a href="/">Home</a> /
+				<a href="#">Your cart</a>
 			</div>
 		</div>
 	</div>
 	<!-- Page info end -->
-
+	<?php //debug($data);?>
 	<!-- cart section end -->
 	<section class="cart-section spad">
 		<div class="container">
